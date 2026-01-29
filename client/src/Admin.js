@@ -28,25 +28,25 @@ function Admin() {
   }, []);
 
   const fetchProjects = () => {
-    axios.get("http://localhost:5000/projects")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/projects")
       .then(res => setProjects(res.data))
       .catch(err => console.log("Error fetching projects:", err));
   };
 
   const fetchClients = () => {
-    axios.get("http://localhost:5000/clients")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/clients")
       .then(res => setClients(res.data))
       .catch(err => console.log("Error fetching clients:", err));
   };
 
   const fetchContacts = () => {
-    axios.get("http://localhost:5000/contacts")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/contacts")
       .then(res => setContacts(res.data))
       .catch(err => console.log("Error fetching contacts:", err));
   };
 
   const fetchSubscribers = () => {
-    axios.get("http://localhost:5000/subs")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/subs")
       .then(res => setSubscribers(res.data))
       .catch(err => console.log("Error fetching subscribers:", err));
   };
@@ -56,7 +56,7 @@ function Admin() {
       alert("Please fill all fields");
       return;
     }
-    axios.post("http://localhost:5000/projects", project)
+    axios.post("https://fullstack-portfolio-backend-1agw.onrender.com/projects", project)
       .then(() => {
         alert("Project Added!");
         setProject({ name: "", description: "", image: "" });
