@@ -30,7 +30,7 @@ function App() {
       alert("Please fill all fields");
       return;
     }
-    axios.post("http://localhost:5000/contacts", contact)
+    axios.post("https://fullstack-portfolio-backend-1agw.onrender.com/contacts", contact)
       .then(() => {
         alert("Message Sent!");
         setContact({ fullName: "", email: "", mobile: "", city: "" });
@@ -44,7 +44,7 @@ function App() {
       alert("Please enter an email");
       return;
     }
-    axios.post("http://localhost:5000/subs", { email })
+    axios.post("https://fullstack-portfolio-backend-1agw.onrender.com/subs", { email })
       .then(() => {
         alert("Subscribed!");
         setEmail("");
