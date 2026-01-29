@@ -70,7 +70,7 @@ function Admin() {
       alert("Please fill all fields");
       return;
     }
-    axios.post("http://localhost:5000/clients", client)
+    axios.post("https://fullstack-portfolio-backend-1agw.onrender.com/clients", client)
       .then(() => {
         alert("Client Added!");
         setClient({ name: "", description: "", designation: "", image: "" });
@@ -81,7 +81,7 @@ function Admin() {
 
   const deleteProject = (id) => {
     if (window.confirm("Are you sure?")) {
-      axios.delete(`http://localhost:5000/projects/${id}`)
+      axios.delete(`https://fullstack-portfolio-backend-1agw.onrender.com/projects/${id}`)
         .then(() => {
           alert("Project Deleted!");
           fetchProjects();
@@ -92,7 +92,7 @@ function Admin() {
 
   const deleteClient = (id) => {
     if (window.confirm("Are you sure?")) {
-      axios.delete(`http://localhost:5000/clients/${id}`)
+      axios.delete(`https://fullstack-portfolio-backend-1agw.onrender.com/clients/${id}`)
         .then(() => {
           alert("Client Deleted!");
           fetchClients();
