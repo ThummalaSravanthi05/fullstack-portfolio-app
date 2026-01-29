@@ -9,11 +9,11 @@ function App() {
   const [showAdmin, setShowAdmin] = useState(false);
 
   useEffect(() => {
-    axios.get("https://fullstack-portfolio-app.onrender.com/projects")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/projects")
       .then(res => setProjects(res.data))
       .catch(err => console.log("Error fetching projects:", err));
 
-    axios.get("hhttps://fullstack-portfolio-app.onrender.com/clients")
+    axios.get("https://fullstack-portfolio-backend-1agw.onrender.com/clients")
       .then(res => setClients(res.data))
       .catch(err => console.log("Error fetching clients:", err));
   }, []);
