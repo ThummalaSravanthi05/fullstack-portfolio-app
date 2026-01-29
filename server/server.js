@@ -8,9 +8,25 @@ app.use(cors());
 app.use(express.json());
 
 /* ================= DATABASE CONNECTION ================= */
-mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log("DB Connected"))
-.catch(err => console.log(err));
+mongoose.set('strictQuery', false);
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log("DB Connected");
+  } catch (err) {
+    console.error("DB connection error:", err.message || err);
+    console.error("Possible causes: incorrect MONGO_URL in server/.env, invalid credentials, or IP address not whitelisted in MongoDB Atlas.");
+    console.error("Follow Atlas instructions: https://www.mongodb.com/docs/atlas/security-whitelist/");
+    process.exit(1);
+  }
+};
+
+connectDB();
+
+mongoose.connection.on('error', (err) => {
+  console.error('Mongoose connection error:', err && err.message ? err.message : err);
+});
 
 /* ================= MODELS ================= */
 const Project = require("./models/Project");

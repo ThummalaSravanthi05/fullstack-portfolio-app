@@ -343,4 +343,5 @@ This project is open source and available under the MIT License.
 
 **Last Updated**: January 2026
 #   f u l l s t a c k - p o r t f o l i o - a p p  
+ #   f u l l s t a c k - a p p - p o r t f o l i o  
  
